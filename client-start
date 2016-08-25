@@ -32,8 +32,7 @@ export FONTCONFIG_PATH=$SNAP/etc/fonts/config.d
 export FONTCONFIG_FILE=$SNAP/etc/fonts/fonts.conf
 
 
-# Uncomment to choose whichever app you prefer
-#$SNAP/usr/bin/qmlscene $SNAP/demo.qml
-$SNAP/clocks
+# Loop execution
+while true; do $SNAP/usr/bin/qmlscene --fullscreen $SNAP/webview.qml; done
 
 wait

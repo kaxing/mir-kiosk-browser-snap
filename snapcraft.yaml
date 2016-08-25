@@ -1,8 +1,7 @@
-name: mir-client
+name: mir-kiosk-browser
 version: 0.23.5
-summary: Example app on Mir stack
-description: "This example can be used as a guide by other mir client snaps to render guis"
-# as this is an example, type could be changed to oem
+summary: Kiosk browser on Mir stack
+description: "Simple WebView for embedded devices to browse localhost HTTP service"
 confinement: strict
 type: app
 
@@ -14,10 +13,10 @@ apps:
       - mir
       - opengl
 parts:
-  clocks:
+  browser:
     plugin: copy
     files:
-      clocks: clocks
+        webview.qml: webview.qml
     stage-packages:
       - qmlscene
       - qtdeclarative5-qtmir-plugin
@@ -51,18 +50,9 @@ parts:
       - intltool
       - qtdeclarative5-dev
 # alternate clients to play with
-#  qmldemo:
-#    plugin: copy
-#    files:
-#      demo.qml: demo.qml
-#  samegame:
-#    plugin: copy
-#    files:
-#      samegame: samegame
   environment:
     plugin: copy
     files:
-#      qtclockenv: bin/qtclockenv
       snappy-qt5.conf: etc/xdg/qtchooser/snappy-qt5.conf
   glue:
     plugin: copy
