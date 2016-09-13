@@ -1,5 +1,5 @@
 name: mir-kiosk-browser
-version: 0.23.5
+version: 0.21
 summary: Kiosk browser on Mir stack
 description: "Simple WebView for embedded devices to browse localhost HTTP service"
 confinement: strict
